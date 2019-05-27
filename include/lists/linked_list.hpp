@@ -112,7 +112,12 @@ template <class T>
 void LinkedList<T>::del(size_t i) {
   Node& node = this->getNode(i);
   Node * node1 = node.next;
-  node.next = node1->next;
+
+  // if (i+1 == this->len) {
+  // handle last node del
+  if (!(node.next = node1->next)) {
+    this->tail = &node;
+  }
   delete node1;
   this->len--;
 }
