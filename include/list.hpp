@@ -3,7 +3,6 @@
 
 #include "etddef.hpp"
 
-using namespace etd;
 
 namespace etd {
 
@@ -17,6 +16,9 @@ namespace etd {
         virtual void set(size_t, const T&) = 0;
         virtual void del(size_t) = 0;
 
+        virtual Iterator<T> iter() const {
+        };
+
         const T& operator[] (const size_t i) const {
           return this->get(i);
         };
@@ -25,6 +27,14 @@ namespace etd {
           return this->get(i);
         };
     };
+
+  template <class T>
+  T& lsearch(List<T>& list, T el) {
+    size_t len = list.length();
+    for (size_t i = 0; i < len; i++) {
+      if
+    }
+  }
 
 }
 

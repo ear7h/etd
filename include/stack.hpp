@@ -4,6 +4,8 @@
 #include "list.hpp"
 #include "lists/linked_list.hpp"
 
+namespace etd {
+
 template <class T>
 class Stack {
   List<T> & list;
@@ -33,5 +35,7 @@ class Stack {
       this->list.ins(0, el);
     };
 };
+
+}
 
 #endif

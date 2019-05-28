@@ -6,9 +6,6 @@
 #include "../etddef.hpp"
 #include "../list.hpp"
 
-using namespace std;
-using namespace etd;
-
 namespace etd {
 
 template <class T>
