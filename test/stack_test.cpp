@@ -1,4 +1,5 @@
 #include <stack.hpp>
+#include <lists/array_list.hpp>
 
 #include "test.h"
 
@@ -12,7 +13,7 @@ struct tc_t {
   int op;
 };
 
-int main() {
+void testStack(Stack<int> * s) {
   tc_t tcs[] = {
     {1, PUSH},
     {1, LEN},
@@ -26,8 +27,6 @@ int main() {
     {2, POP},
     {0, LEN},
   };
-
-  Stack<int> * s = new Stack<int>();
 
   tc_t tc;
   for (size_t i = 0; i < sizeof(tcs) / sizeof(tc_t); i++) {
@@ -48,4 +47,14 @@ int main() {
         break;
     }
   }
+}
+
+int main() {
+  auto s1 = Stack<int>();
+  testStack(&s1);
+
+  auto s2 = Stack<int>(*(new ArrayList<int>()));
+  testStack(&s2);
+
+  return 0;
 }
