@@ -31,6 +31,28 @@ void ptrSharing() {
   TEST( *ptr2 = *x);
 }
 
+void polyMorph() {
+  class Base {
+  public:
+    int x;
+  };
+  class Derived : public Base {
+  public:
+    int y;
+  };
+
+  Base * b = new Base();
+  b->x = 10;
+  etd::SharedPtr<Base> p1(b);
+  TEST( b->x == p1->x );
+
+  Derived * d = new Derived();
+  d->x = 11;
+  p1 = d;
+  // p1->y;
+  TEST( d->x == p1->x );
+}
+
 
 int main() {
   ptrHoldingPtr();
