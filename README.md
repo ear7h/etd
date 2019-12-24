@@ -1,5 +1,7 @@
 # ear7h standard library
 
+archived in favor of [`ear7h/cuitils`](../../../cutils/)
+
 A personal redesign and implementation of the C++ standard library.
 
 desired (not quite there yet) project structure.
